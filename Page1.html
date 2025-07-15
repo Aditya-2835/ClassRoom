@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Classroom Management Tool - Login</title>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button{
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+    </style>
+</head>
+<body background="IMG_0728.PNG">
+    <div class="container">
+        <h1>Classroom Management Tool</h1>
+        <form id="login-form">
+            <label for="user-type">Select User Type:</label>
+            <select id="user-type" required>
+                <option class="text" value="">--Select--</option>
+                <option class="text" value="student">Student</option>
+                <option class="text" value="faculty">Faculty</option>
+            </select>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const userType = document.getElementById('user-type').value;
+            if (userType === 'student') {
+                window.open("Student.html");
+            } else if (userType === 'faculty') {
+                window.open("faculty.html");
+            }
+        }
+    );
+    </script>
+</body>
+</html>

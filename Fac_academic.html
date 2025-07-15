@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Academics</title>
+    <style>
+        .topnav {
+            background-color: #111d5e;
+            overflow: hidden;
+        }
+
+        .topnav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 10px 100px;
+            text-decoration: none;
+            font-size: 20px;
+            margin-left:50px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.8s;
+            transition: background-color 0.8s;
+        }
+
+        .topnav a:hover {
+            background-color: #203de0;
+            color: white;
+            box-shadow:15px 15px 15px rgba(0,0,0,0.5);
+        }
+
+        .select{
+            font-size: larger;
+            border: 1px solid black;
+        }
+        .text{
+            font-size: larger;
+        }
+
+    </style>
+</head>
+<body bgcolor="#E0F3F5">
+    <div class="topnav">
+        <a href="Faculty_main_page.html">Back</a>
+        <a href="https://git.edu/category/whats-new/" target="_blank">News</a>
+        <a href="https://www.linkedin.com/company/klsgitbelagavi/" target="_blank">Contact</a>
+        <a href="https://git.edu/about/about-kls-git/" target="_blank">About</a>
+    </div>
+    <center><img src="git-logo-new.png" width="1024"></center><hr>
+   <center>
+    <p class="text"><h2>Select Student:</h2></p>
+    <select id="optionsDropdown" onchange="displayContent()">
+        <option value="none">-- Select an option --</option>
+        <option value="Student 1">2GI23CS001</option>
+        <option value="Student 2">2GI23CS002</option>
+    </select>
+   </center>
+   <div id="contentContainer"></div>
+   <script>
+       function displayContent() {
+            let selectedOption = document.getElementById('optionsDropdown').value;
+            let contentContainer = document.getElementById('contentContainer');
+            contentContainer.innerHTML = '';
+            if (selectedOption === 'Student 1') {
+                let tableHTML = `
+                <head>
+                <style>
+                    .box{
+                        width: auto;
+                        height: 100%;
+                        border: 1px solid black;
+                        padding: 15px;
+                        margin: 15px;
+                    }
+                    .pic{
+                        width: fit-content;
+                        height: fit-content;
+                        border: 1px solid black;
+                        float: right;
+                    }
+                    .Info p{
+                        font-size: 20px;
+                    }
+                    .Info1 p{
+                        font-size: 20px;
+                    }
+                    .Info1 hr{
+                        margin-right: 245px;
+                    }
+                </style>
+                </head>
+                <div class="box">
+                    <center><h1>Student Information</h1></center><hr>
+                    <div class="pic">
+                        <img src="download.jpg" alt="">
+                    </div>
+                <div class="Info1">
+            <br><h2>Personal details</h3><hr>
+            <p><b>Name:</b>XYZ</p>
+            <p><b>Gender:</b>Male</p>
+            <p><b>USN:</b>2GI23CS000</p>
+            <p><b>Email:</b>xyz@gmail.com</p>
+            <p><b>Mobile No.:</b>1234567890</p><br>
+        </div>
+        <div class="Info">
+           <h2>Course details</h2><hr>
+           <p><b>Degree:</b>Bachelor of Engineering</p>
+           <p><b>Branch:</b>Computer Science</p>
+           <p><b>Sem:</b>3rd</p>
+           <p><b>Scheme:</b>BE-FY CHEMISTRY CYCLE-2022-2023-FIRST YEAR (2022)</p><br>
+        </div>
+    </div>
+
+                    <div class="box">
+                        <center><h2>CIE Marks</h2></center>
+                        <br><center><table border="1" style="width:100%">
+                        <thead>
+                            <tr>
+                                <center>
+                                <th>Subject</th>
+                                <th>IA 1</th>
+                                <th>IA 2</th>
+                                <th>Total</th>
+                                </center>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Maths</td>
+                                <td>25/30</td>
+                                <td>27/30</td>
+                                <td>52/60</td>
+                            </tr>
+                            <tr>
+                                <td>Java</td>
+                                <td>27/30</td>
+                                <td>29/30</td>
+                                <td>56/60</td>
+                            </tr>
+                            <tr>
+                                <td>DSA</td>
+                                <td>28/30</td>
+                                <td>30/30</td>
+                                <td>58/60</td>
+                            </tr>
+                            <tr>
+                                <td>S.E</td>
+                                <td>27/30</td>
+                                <td>28/30</td>
+                                <td>55/60</td>
+                            </tr>
+                            <tr>
+                                <td>PLC</td>
+                                <td>-</td>
+                                <td>28/30</td>
+                                <td>28/30</td>
+                            </tr>
+                        </tbody>
+                    </table></center>
+                    </div>
+                `;
+                contentContainer.innerHTML = tableHTML;
+
+            } else if (selectedOption === 'Student 2') {
+                let tableHTML = `
+                <head>
+            <style>
+                .box{
+                    width: auto;
+                    height: 100%;
+                    border: 1px solid black;
+                    padding: 15px;
+                    margin: 15px;
+                }
+
+                .pic{
+                    width: fit-content;
+                    height: fit-content;
+                    border: 1px solid black;
+                    float: right;
+                }
+
+                .Info p{
+                    font-size: 20px;
+                }
+
+                .Info1 p{
+                    font-size: 20px;
+                }
+        
+                .Info1 hr{
+                    margin-right: 245px;
+                }
+            </style>
+            </head>
+                <div class="box">
+                    <center><h1>Student Information</h1></center><hr>
+                    <div class="pic">
+                        <img src="download.jpg" alt="">
+                    </div>
+                <div class="Info1">
+            <br><h2>Personal details</h3><hr>
+            <p><b>Name:</b>XYZ</p>
+            <p><b>Gender:</b>Male</p>
+            <p><b>USN:</b>2GI23CS000</p>
+            <p><b>Email:</b>xyz@gmail.com</p>
+            <p><b>Mobile No.:</b>1234567890</p><br>
+        </div>
+        <div class="Info">
+           <h2>Course details</h2><hr>
+           <p><b>Degree:</b>Bachelor of Engineering</p>
+           <p><b>Branch:</b>Computer Science</p>
+           <p><b>Sem:</b>3rd</p>
+           <p><b>Scheme:</b>BE-FY CHEMISTRY CYCLE-2022-2023-FIRST YEAR (2022)</p><br>
+        </div>
+    </div>
+
+                    <div class="box">
+                        <center><h2>CIE Marks</h2></center>
+                        <br><center><table border="1" style="width:100%">
+                        <thead>
+                            <tr>
+                                <center>
+                                <th>Subject</th>
+                                <th>IA 1</th>
+                                <th>IA 2</th>
+                                <th>Total</th>
+                                </center>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Maths</td>
+                                <td>25/30</td>
+                                <td>27/30</td>
+                                <td>52/60</td>
+                            </tr>
+                            <tr>
+                                <td>Java</td>
+                                <td>27/30</td>
+                                <td>29/30</td>
+                                <td>56/60</td>
+                            </tr>
+                            <tr>
+                                <td>DSA</td>
+                                <td>28/30</td>
+                                <td>30/30</td>
+                                <td>58/60</td>
+                            </tr>
+                            <tr>
+                                <td>S.E</td>
+                                <td>27/30</td>
+                                <td>28/30</td>
+                                <td>55/60</td>
+                            </tr>
+                            <tr>
+                                <td>PLC</td>
+                                <td>-</td>
+                                <td>28/30</td>
+                                <td>28/30</td>
+                            </tr>
+                        </tbody>
+                    </table></center>
+                    </div>
+                `;
+                contentContainer.innerHTML = tableHTML;
+
+            } else {
+                contentContainer.innerHTML = "<p>Please select an option from the dropdown above.</p>";
+            }
+        }
+   </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .text{
+            font-size: larger;
+        }
+    </style>
+    <title>Classroom Management Tool - Login</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button{
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+    </style>
+</head>
+<body background="IMG_0728.PNG">
+        <div class="container">
+            <h1>Welcome</h1>
+            <form id="login-form">
+                <input class="text" type="text" placeholder="USN" id="usn" size="47"><br><br>
+                <input class="text" type="password" placeholder="Password" id="Password" size="47"><br><br>
+                <input type="checkbox" onclick="myFunction()">Show Password
+                <button onclick="login()">Login</button>
+            </form>
+    </div>
+   
+    <script>
+        function myFunction() {
+        var x = document.getElementById("Password");
+        if (x.type === "password") {
+            x.type = "text";
+        } 
+        else {
+            x.type = "password";
+        }
+    }
+        function login(){
+            const username = document.getElementById('usn').value;
+            const password = document.getElementById('Password').value;
+
+            if (!username || !password) {
+                alert("Please enter the details properly");
+            } else {
+                window.open("Student_main_page.html")
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GIT Website</title>
+    <style>
+        .topnav {
+            background-color: #111d5e;
+            overflow: hidden;
+        }
+
+        .topnav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 10px 100px;
+            text-decoration: none;
+            font-size: 20px;
+            margin-left:100px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.8s;
+            transition: background-color 0.8s;
+        }
+
+        .topnav a:hover {
+            background-color: #203de0;
+            color: white;
+            box-shadow:15px 15px 15px rgba(0,0,0,0.5);
+        }
+        
+        .container {
+            position: relative;
+            width: 100%;
+            border: 2px solid black;
+            margin-bottom: 20px;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            height: 100%;
+            width: 80%;
+            opacity: 0;
+            transition: .5s ease;
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        .text {
+            color: black;
+            background-color: rgba(192,192,192,0.5);
+            font-size: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+        }
+
+        .overlay1{
+            position: absolute; 
+            bottom: 0;
+            right: 20%;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+        }
+
+        .container:hover .overlay1 {
+            opacity: 1;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        .credit-section {
+            text-align: center;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 2rem;
+            border-radius: 8px;
+        }
+
+        .credit-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .developer-cards {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .developer-card {
+            background-color: #f1f1f1;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            width: 250px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .developer-card:hover {
+            transform: scale(1.05);
+        }
+
+        .developer-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .developer-card h3 {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+            color: #444;
+        }
+
+        .developer-card p {
+            margin: 0;
+            font-size: 1rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="Page1.html">Login Page</a>
+        <a href="https://git.edu/category/whats-new/" >News</a>
+        <a href="https://www.linkedin.com/company/klsgitbelagavi/">Contact</a>
+        <a href="https://git.edu/about/about-kls-git/">About</a>
+    </div>
+    <center><img src="git-logo-new.png" style="width: 100%;"></center>
+    
+
+    <div class="container">
+        <a href="StudentInfo.html">
+            <img src="Stud.jpg" style="width: 100%; height: 400px; object-fit: cover;">
+        <div class="overlay1">
+            <div class="text">
+                <center><h2>Student Info</h2></center>
+            </div>
+        </div>
+        </a>
+    </div>
+
+    <div class="container">
+        <a href="Academics.html">
+            <img src="Aca.jpg" style="width: 100%; height: 400px; object-fit: cover;">
+        <div class="overlay">
+            <div class="text">
+                <center><h2>Academics</h2></center>
+            </div>
+        </div>
+        </a>
+    </div>
+
+    <div class="container">
+        <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fclassroom.google.com%2Fu%2F0%2F%3Fauthuser%3D%24authuser&ec=GAlAiQI&hl=en-GB&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S1158650226%3A1732776140576012&ddm=1" width="100%">
+            <img src="Notes.jpg" style="width: 100%; height: 400px; object-fit: cover;">
+            <div class="overlay1">
+            <div class="text">
+                <h2>Notes</h2>
+            </div>
+        </div>
+        </a>
+    </div>
+
+    <section class="credit-section">
+        <h2>Meet the Developers</h2>
+        <div class="developer-cards">
+            <div class="developer-card">
+                <img src="WhatsApp Image 2025-01-06 at 19.47.52_05c06eed.jpg" alt="Developer 1" class="developer-photo">
+                <h3>Aditya Ghatge</h3>
+                <p><strong>Email:</strong>23u0262@students.git.edu</p>
+            </div>
+            <div class="developer-card">
+                <img src="WhatsApp Image 2025-01-06 at 20.30.39_a90b6cb1.jpg" alt="Developer 2" class="developer-photo">
+                <h3>Shreya Sungar</h3>
+                <p><strong>Email:</strong>23u0282@students.git.edu</p>
+            </div>
+            <div class="developer-card">
+                <img src="IMG_0100.JPG" alt="Developer 3" class="developer-photo">
+                <h3>Atharv Patil</h3>
+                <p><strong>Email:</strong>23u0211@students.git.edu</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

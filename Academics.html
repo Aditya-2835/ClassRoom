@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Academics</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        .topnav {
+            background-color: #111d5e;
+            overflow: hidden;
+        }
+
+        .topnav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 10px 100px;
+            text-decoration: none;
+            font-size: 20px;
+            margin-left:100px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.8s;
+            transition: background-color 0.8s;
+        }
+
+        .topnav a:hover {
+            background-color: #203de0;
+            color: white;
+            box-shadow:15px 15px 15px rgba(0,0,0,0.5);
+        }
+
+        .select{
+            font-size: larger;
+            border: 1px solid black;
+        }
+        .text{
+            font-size: xx-large;
+        }
+
+    </style>
+</head>
+<body bgcolor="#E0F3F5">
+    <div class="topnav">
+        <a href="Student_main_page.html">Back</a>
+        <a href="https://git.edu/category/whats-new/" target="_blank">News</a>
+        <a href="https://www.linkedin.com/company/klsgitbelagavi/" target="_blank">Contact</a>
+        <a href="https://git.edu/about/about-kls-git/" target="_blank">About</a>
+    </div>
+    <center><img src="git-logo-new.png" width="1024"></center><hr>
+   <center>
+    <p class="text"><h2>Enter the Semester</h2></p>
+    <select id="optionsDropdown" onchange="displayContent()">
+        <option value="none">-- Select an option --</option>
+        <option value="2nd">2nd Sem</option>
+        <option value="3rd">3rd Sem</option>
+    </select>
+   </center>
+   <div id="contentContainer"></div>
+
+   <center><div id="myPlot" style="width:100%;max-width:700px"></div></center>
+   <center><div id="myPlot" style="width:100%;max-width:700px"></div></center>
+
+
+
+   <script>
+       function displayContent() {
+            let selectedOption = document.getElementById('optionsDropdown').value;
+            let contentContainer = document.getElementById('contentContainer');
+            contentContainer.innerHTML = '';
+            if (selectedOption === '2nd') {
+                let tableHTML = `
+                    <br><center><table border="1" style="width:75%">
+                        <thead>
+                            <tr>
+                                <center>
+                                <th>Subject</th>
+                                <th>IA 1</th>
+                                <th>IA 2</th>
+                                <th>Total</th>
+                                </center>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Maths</td>
+                                <td>25/30</td>
+                                <td>27/30</td>
+                                <td>52/60</td>
+                            </tr>
+                            <tr>
+                                <td>Chemisty</td>
+                                <td>27/30</td>
+                                <td>29/30</td>
+                                <td>56/60</td>
+                            </tr>
+                            <tr>
+                                <td>CAD</td>
+                                <td>28/30</td>
+                                <td>30/30</td>
+                                <td>58/60</td>
+                            </tr>
+                            <tr>
+                                <td>ESC</td>
+                                <td>27/30</td>
+                                <td>28/30</td>
+                                <td>55/60</td>
+                            </tr>
+                            <tr>
+                                <td>PLC</td>
+                                <td>25/30</td>
+                                <td>28/30</td>
+                                <td>53/60</td>
+                            </tr>
+                        </tbody>
+                    </table></center>
+                `
+                const xArray = ["Maths", "Chemistry", "CAD", "ESC", "PLC"];
+                const yArray = [52,56,58,55,53];
+                const data = [{x:xArray,y:yArray,type:"bar",orientation:"v",marker: {color:7091E6}}];
+                const layout = {title:"Total Marks"};
+                Plotly.newPlot("myPlot", data, layout);
+
+                contentContainer.innerHTML = tableHTML;
+
+            } else if (selectedOption === '3rd') {
+                let tableHTML = `
+                    <br><center><table border="1" style="width:75%">
+                        <thead>
+                            <tr>
+                                <center>
+                                <th>Subject</th>
+                                <th>IA 1</th>
+                                <th>IA 2</th>
+                                <th>Total</th>
+                                </center>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Maths</td>
+                                <td>25/30</td>
+                                <td>27/30</td>
+                                <td>52/60</td>
+                            </tr>
+                            <tr>
+                                <td>Java</td>
+                                <td>27/30</td>
+                                <td>29/30</td>
+                                <td>56/60</td>
+                            </tr>
+                            <tr>
+                                <td>DSA</td>
+                                <td>28/30</td>
+                                <td>30/30</td>
+                                <td>58/60</td>
+                            </tr>
+                            <tr>
+                                <td>S.E</td>
+                                <td>27/30</td>
+                                <td>28/30</td>
+                                <td>55/60</td>
+                            </tr>
+                            <tr>
+                                <td>PLC</td>
+                                <td>-</td>
+                                <td>28/30</td>
+                                <td>28/30</td>
+                            </tr>
+                        </tbody>
+                    </table></center>
+                `
+                const xArray = ["Maths", "Java", "DSA", "S.E", "PLC"];
+                const yArray = [52,56,58,55,28];
+                const data = [{x:xArray,y:yArray,type:"bar",orientation:"v",marker: {color:7091E6}}];
+                const layout = {title:"Total Marks"};
+                Plotly.newPlot("myPlot", data, layout);
+                contentContainer.innerHTML = tableHTML;
+
+            } else {
+                contentContainer.innerHTML = "<p>Please select an option from the dropdown above.</p>";
+            }
+        }
+   </script>
+</body>
+</html>
